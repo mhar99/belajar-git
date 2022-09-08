@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
 
-Route::post('proses_login', 'App\Http\Controllers\LoginController@proses_login')->name('proses_login');
-Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
-    Route::resource('admin', AdminController::class);
-});
